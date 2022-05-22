@@ -9,23 +9,18 @@
  * @license      https://github.com/gokcesariciyil/webpage-proxy/blob/main/LICENSE MIT License
  *
  */
+
+/*
+* ATTENTION!
+* Ultimate-web-scraper files that do not have a composer package should be downloaded to the main directory.
+* https://github.com/cubiclesoft/ultimate-web-scraper
+*/
 require_once "support/web_browser.php";
 require_once "support/tag_filter.php";
 
 // Security Layer
 function getError($message) {
 	echo '<h3>'.$message.'</h3>'; die();
-}
-
-function clientIp()   {  
-	if (!empty($_SERVER['HTTP_CLIENT_IP'])) {  
-		$ip	= $_SERVER['HTTP_CLIENT_IP'];  
-	} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){  
-		$ip	= $_SERVER['HTTP_X_FORWARDED_FOR'];  
-	} else{  
-		$ip	= $_SERVER['REMOTE_ADDR'];  
-	}  
-	return $ip;  
 }
 
 if(!isset($_GET['id'])) {
